@@ -1,25 +1,27 @@
-# 環境構築方法
+## 概要
+- JoSIMの実行環境
+
+## 環境構築方法
 
  このファイルと同じディレクトリで、次のコマンドを実行
 
 ## 
 
-## 1. Dockerイメージのビルド
+## 1. Dockerイメージのビルドとコンテナの開始
 
 - 以下コマンドで、Dockerfileに記載された設定に基いたDockerイメージをビルド
 
-    `docker build -t josim .`
+    `docker-compose up -d`
 
-- 次のようなコメントが出てきたらビルド成功
 
-    ```ruby:qiita.rb
-    What's Next?
-    View a summary of image vulnerabilities and recommendations → docker scout quickvie
-    ```
+- 次のコマンドで確認、画像のような出力があれば成功
 
-## 2. コンテナの実行
+    `docker-compose ps`
+
+    ![Architecture diagram](images/docker-compose-check.png)
+
+
+## 2. コンテナ内に入る
 ```
-docker run -v /Users/kyousuke/Investigation/20240604:/testes -it --entrypoint /bin/bash josim
+docker-compose exec josim /bin/bash
 ```
-docker run -v $(pwd):/JoSIM -it --entrypoint /bin/bash josim 
-## 3. テスト

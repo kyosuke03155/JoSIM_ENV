@@ -1,5 +1,5 @@
 # ベースイメージとしてUbuntuを使用
-FROM ubuntu:20.04
+FROM ubuntu:22.04 
 
 # 環境変数の設定（タイムゾーン設定を自動化）
 ENV DEBIAN_FRONTEND=noninteractive
@@ -29,5 +29,5 @@ RUN mkdir build
 WORKDIR /JoSIM/build
 RUN cmake .. && make
 
-# エントリーポイントを設定
-ENTRYPOINT ["/bin/bash"]
+# デフォルトのコマンドを設定
+CMD ["tail", "-f", "/dev/null"]
