@@ -1,0 +1,8 @@
+services:
+  vote:
+    build: 
+      context: ./
+    volumes:
+     - ./vote:/usr/local/app
+    ports:
+      - "5001:80"
