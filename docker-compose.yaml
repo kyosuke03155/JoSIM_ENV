@@ -1,9 +1,9 @@
-version: '3'
+version: '4'
 services:
   josim:
     build: 
       context: ./
     volumes:
-      - ./JoSIM:/JoSIM/app
+      - ./JoSIM:/JoSIM/usrs
     ports:
       - "5001:80"

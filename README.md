@@ -25,3 +25,9 @@
 ```
 docker-compose exec josim /bin/bash
 ```
+
+## 3. josimコマンドの実行
+```
+josim-cli -o ./usrs/test.csv ./usrs/test.cir -V 1
+```
+ホスト側のJoSIMディレクトリにtest.csvが生成生成されているのを確認する
